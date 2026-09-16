@@ -245,11 +245,11 @@ h3.title {
   line-height: 1.6;
   color: var(--fg);
 }
-/* Lambrequin : séparation entre chaque œuvre */
-.work { border-bottom: 0; }
-.work::after {
-  content: "";
-  grid-column: 1 / -1;
+/* ---------- Séparations entre les œuvres ---------- */
+.work, .interlude { border-bottom: 0; }
+.sep-lambrequin {
+  max-width: 1440px;
+  margin: 0 auto;
   height: 44px;
   background: var(--fg);
   -webkit-mask: var(--lambrequin) left top / auto 100% repeat-x;
@@ -257,14 +257,21 @@ h3.title {
   -webkit-mask-repeat: round no-repeat;
           mask-repeat: round no-repeat;
 }
-
-.excerpt {
-  max-width: 44ch;
-  margin: 1.8em 0 0;
-  padding-top: 1.4em;
+.sep-line {
+  max-width: 1440px;
+  margin: 0 auto;
+  border: 0;
   border-top: 1px solid var(--line);
-  font-size: 17px;
-  line-height: 1.7;
+}
+.interlude .block-body { padding-top: clamp(48px, 7vw, 96px); padding-bottom: clamp(48px, 7vw, 96px); }
+.interlude p {
+  max-width: 36ch;
+  margin: 0 auto;
+  font-family: var(--font-title);
+  font-size: clamp(22px, 2.5vw, 32px);
+  line-height: 1.4;
+  text-align: center;
+  text-wrap: balance;
 }
 
 .eyebrow {
@@ -359,8 +366,7 @@ h3.title {
   .hero-text { left: var(--pad); }
 
   .rail { font-size: 11px; }
-  .work::after { height: 30px; }
-  .excerpt { font-size: 16px; }
+  .sep-lambrequin { height: 30px; }
   .block-body { padding: 56px 20px; }
   .origines, .work-body, .work-body.landscape,
   .work:nth-of-type(even) .work-body,
