@@ -252,8 +252,12 @@ h3.title {
   margin: 0 auto;
   height: 44px;
   background: var(--fg);
-  -webkit-mask: var(--lambrequin) left top / auto 100% repeat-x;
-          mask: var(--lambrequin) left top / auto 100% repeat-x;
+  -webkit-mask-image: var(--lambrequin);
+          mask-image: var(--lambrequin);
+  -webkit-mask-size: auto 100%;
+          mask-size: auto 100%;
+  -webkit-mask-position: left top;
+          mask-position: left top;
   -webkit-mask-repeat: round no-repeat;
           mask-repeat: round no-repeat;
 }
